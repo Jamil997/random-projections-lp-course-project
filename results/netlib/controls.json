@@ -1,0 +1,62 @@
+[
+  {
+    "dataset": "adlittle",
+    "k": 56,
+    "status": "optimal",
+    "feas": 8.30006003424256e-15,
+    "neg": 0.0,
+    "eq_residual_inf": 7.275957614183426e-12,
+    "min_x": 0.0,
+    "objective": 225494.96316237806,
+    "obj_gap": 9.679982442371407e-15,
+    "accepted_feasible": 1
+  },
+  {
+    "dataset": "afiro",
+    "k": 27,
+    "status": "optimal",
+    "feas": 4.257234459374534e-15,
+    "neg": 8.514415329819002e-16,
+    "eq_residual_inf": 7.212008767965017e-13,
+    "min_x": -7.043423663065289e-13,
+    "objective": -464.7531428571428,
+    "obj_gap": 1.2230884230573284e-16,
+    "accepted_feasible": 1
+  },
+  {
+    "dataset": "blend",
+    "k": 74,
+    "status": "optimal",
+    "feas": 4.995696904514555e-09,
+    "neg": 6.163653012531536e-11,
+    "eq_residual_inf": 1.3744088312082252e-07,
+    "min_x": -1.067178090509279e-08,
+    "objective": -30.812150004466343,
+    "obj_gap": 5.148556624806175e-09,
+    "accepted_feasible": 1
+  },
+  {
+    "dataset": "scfxm1",
+    "k": 330,
+    "status": "optimal",
+    "feas": 2.5111856514707835e-13,
+    "neg": 1.8108036000950148e-13,
+    "eq_residual_inf": 1.2073542166035622e-10,
+    "min_x": -4.35292595631653e-09,
+    "objective": 18416.75902834875,
+    "obj_gap": 1.0469424966633034e-14,
+    "accepted_feasible": 1
+  },
+  {
+    "dataset": "stocfor1",
+    "k": 117,
+    "status": "optimal",
+    "feas": 5.45202934164154e-11,
+    "neg": 2.7335558298579354e-15,
+    "eq_residual_inf": 1.6689227777533233e-10,
+    "min_x": -5.3043440061098313e-11,
+    "objective": -41131.97621939548,
+    "obj_gap": 9.946691947473369e-13,
+    "accepted_feasible": 1
+  }
+]

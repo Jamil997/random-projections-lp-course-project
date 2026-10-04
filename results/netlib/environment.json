@@ -1,0 +1,52 @@
+{
+  "started_utc": "2026-10-04T13:25:50.974128+00:00",
+  "finished_utc": "2026-10-04T13:26:20.824607+00:00",
+  "wall_seconds": 29.850359666976146,
+  "python": "3.12.14",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "highs": "1.12.0",
+  "platform": "macOS-26.7-arm64-arm-64bit",
+  "seed": 20261004,
+  "repetitions": 10,
+  "ratios": [
+    0.5,
+    0.75
+  ],
+  "methods": [
+    "gaussian",
+    "sparse",
+    "countsketch"
+  ],
+  "runs": 300,
+  "distinct_originals": 5,
+  "solver": "scipy.optimize.linprog highs-ds",
+  "options": {
+    "presolve": true,
+    "dual_feasibility_tolerance": 1e-07,
+    "primal_feasibility_tolerance": 1e-07,
+    "threads": 1,
+    "parallel": false,
+    "time_limit": 30
+  },
+  "threads": "one requested; reported pools below may omit Apple Accelerate",
+  "threadpools": [],
+  "dataset_manifest_sha256": "c92b0488d177dbbb845290eed0a3de826d185b3c666460ef90dcf4230c012646",
+  "source_hashes": {
+    "netlib_benchmark.py": "1d93f50c43e37d98d6d76d4e4aa24174c9313fc28496aed6d3ed9c607ecb3e19",
+    "rerun.py": "e21d65b567dc44e0d7ba76ef6d4c3ca5757d9cf9bbd0395905c32f4603358ea1",
+    "fetch_netlib.py": "a89c76f87507815f6f487cae1ffe76cb33ebb183e64ec807ccf55e17e534c524"
+  },
+  "artifact_hashes": {
+    "summary.json": "63c2094ba2605e0c80c0342b0b6df0e5aff5d2f0abdc54b9928216ae967fbb28",
+    "summary.csv": "25eb672991673734e8463665f479e3d1e1a9e3f59a95272c89a9a399f27f73f2",
+    "controls.json": "32c5417490807ae690796e8062526b5b7035b0eabff2c884265be937d02b33a3",
+    "raw.json": "d3d023d029cc353f5e3fd74aef34cc39a819ba81e0f12b7364c3d842698efe5e",
+    "diagnostics.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "raw.csv": "54221986a0a0b4402f1a077f9d5f54956f40c5650ed1f50afecf18c4f8e71524",
+    "datasets.json": "d44987dba3d26b733afacab63b5605c13bd29497d9ead01f9162c99712c258db",
+    "vectors.npz": "b5ae9623a08c1ba103417b5106b4c4d75feb502fa61832f7f3a3583fb596ffe9"
+  },
+  "timing_scope": "sampling + matrix multiplication/format conversion + projected solver; recovery separately; MPS conversion, quality, ray certificates and retries excluded",
+  "storage_scope": "CSR original and sparse sketches; dense Gaussian. Reported bytes count array buffers only, not peak process memory. Dense recovery copy excluded from projection storage comparison."
+}
