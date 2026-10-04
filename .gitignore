@@ -1,0 +1,15 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+report/*.aux
+report/*.out
+report/*.log
+report/*.synctex.gz
+build/
+results/rerun*/
+data/netlib/*.mps
+data/netlib/*.mps.gz
