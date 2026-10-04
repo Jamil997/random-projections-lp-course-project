@@ -1,81 +1,72 @@
 # Relationship to earlier work
 
-This course project builds on the author's M.Sc. thesis, *Matrix Sketching and
-Linear Programming* (Nazarbayev University, 2025), and the accompanying
-[GitHub repository](https://github.com/Jamil997/Random_Projections_master_thesis).
-The inspected repository snapshot is commit
-`3d2ff962612e1e5d76b07ccbade889576ba76416`, dated 14 November 2025. That date is
-the repository snapshot date, not the thesis submission date.
+This project builds on Jamil Zhumabek's M.Sc. thesis, *Matrix Sketching and
+Linear Programming*, Nazarbayev University, 2025, and its
+[original repository](https://github.com/Jamil997/Random_Projections_master_thesis).
+The inspected snapshot is
+[3d2ff962612e1e5d76b07ccbade889576ba76416](https://github.com/Jamil997/Random_Projections_master_thesis/tree/3d2ff962612e1e5d76b07ccbade889576ba76416).
+Its 14 November 2025 repository date is not the thesis submission date.
+The original repository and notebook outputs are unchanged.
 
-Original sources:
+## Retained theory and changed experiment
 
-- [feasible_instances.ipynb](https://github.com/Jamil997/Random_Projections_master_thesis/blob/3d2ff962612e1e5d76b07ccbade889576ba76416/feasible_instances.ipynb)
-- [infeasible_instances.ipynb](https://github.com/Jamil997/Random_Projections_master_thesis/blob/3d2ff962612e1e5d76b07ccbade889576ba76416/infeasible_instances.ipynb)
+The projected equality relaxation, JL background, unboundedness implication,
+and counterexample are inherited material, not newly claimed literature-level
+theory. The current extension is empirical, not a new recovery algorithm.
 
-The new scripts independently implement the stated methods. The old notebooks,
-their saved outputs, the thesis PDF, and previous draft measurements are not
-copied into this repository. The earlier repository is not modified.
-
-## Retained theory and methods
-
-The report retains the random-projection LP formulation, relevant JL background,
-and the unboundedness result and counterexample developed in the thesis.
-The report does not claim that this elementary unboundedness property is a new
-literature result. Its proof works for every linear projection by inclusion of
-feasible sets. Nonnegative recession directions are explicit, and the JL
-dimension bound and concentration proof are corrected.
-
-The experimental methods retain Gaussian projection on feasible problems,
-sparse-valued and orthogonal projectors on infeasible problems, and the two
-primal-vector recovery strategies.
-
-## Changes in the new experiments
-
-| Aspect | Previous notebooks | New implementation |
+| Aspect | Earlier work | Current synthetic study |
 |---|---|---|
-| Matrix generation | Fixed-count `scipy.sparse.random`, then dense conversion | Independent uniform entries times a Bernoulli mask; expected density specified |
-| Feasible generation | `b=A x0`, nonnegative uniform `x0` | Same conceptual construction, reproducibly seeded |
-| Infeasible generation | `b=-U[0,1]^m`, all entries negative | Retained as `legacy_all_negative`; additional `mixed_sign_stress` family |
-| Dimensions | Saved notebook configurations use `m=1000`, `n=1400/1600`, `k=327/333` | Three smaller sizes, two densities, explicit half-dimension compression |
-| Randomness | No recorded seed or environment | Independent reproducible data/projector streams, version pins, script SHA |
-| Feasible solvers | SciPy HiGHS for original; CVXPY automatic solver for projection | SciPy HiGHS dual simplex for both |
-| Equality dual | CVXPY equality multiplier used directly in recovery | SciPy equality marginal with checked reduced-cost convention |
-| Dual recovery | Explicit inverse of selected basis matrix | Direct linear solve; singular/ill-conditioned outcomes recorded |
-| Primal recovery | Pseudoinverse of normal equations | SVD least-squares solve without squaring condition number |
-| Sparse projection | Entries `±1/sqrt(k),0` | Variance-normalized `±sqrt(3/k),0` |
-| Orthogonal projection | Full Gaussian QR and row subset | Thin Gaussian QR, transpose, scale `sqrt(m/k)` |
-| Feasibility reporting | Equality residual plus separate negativity ratio | Explicit combined original-feasibility check as well as both metrics |
-| Infeasible `acc` | False-feasible count divided by all trials; errors counted as zero | Separate optimal, infeasible, unknown/error status counts |
-| Timing | Elapsed `perf_counter` values called CPU time | Explicit wall-clock sampling, multiplication, solver, recovery components |
+| Generator | Thesis fixed-count sparse randomness; September draft Bernoulli masks | Returns to fixed-count sparsity and uniform nonzero values |
+| Feasible family | b=A x0; uniform nonnegative witness; c=ones(n) | Retained with explicit independent seeds |
+| Sizes | Thesis includes 1000 x 1200/1400; draft stops at 500 x 750 | Matched anchors plus fixed-aspect scaling through 2000 x 3000 |
+| Compression | Selected historical k; draft fixes k=m/2 | Five ratios at 1000 x 1400, including historical k=327 |
+| Storage | Earlier synthetic arrays dense | Separate dense scaling and true CSR sparsity comparison |
+| Projectors | Gaussian for feasible synthetic LPs | Gaussian and CountSketch; nonempty sketch rows recorded |
+| Solver | Original thesis uses SciPy versus CVXPY automatic selection | Same HiGHS dual simplex and tolerances for both LPs |
+| Recovery | Explicit inverse / normal equations in the notebook | Existing checked marginal sign, direct solve / SVD, stable ties |
+| Evidence | Saved notebook outputs / small draft summaries | Raw records, candidate vectors/duals, scalar recomputation, hashes |
 
-Changing the global nonzero normalization of a projector does not change an
-equality LP's feasible set in exact arithmetic, but it matters when connecting
-the projector to JL distance guarantees. Thin and full Gaussian QR generate
-appropriate random subspaces, but do not produce bitwise-identical matrices.
+The main run finished on 4 October 2026 UTC: 116 projections of 51 independent
+LPs and 61 reference solves (ten dense/CSR pairs). It is a matched-design
+extension, not a bitwise replication of unseeded historical matrices or old
+hardware. Two thesis-anchor densities, 0.1 and 0.5, are repeated.
 
-The added mixed-sign family is scientifically separate from the legacy family:
-its false-feasible rates must not be reported as a direct comparison against the
-old notebook's all-negative family. Both deliberately expose simple Farkas
-certificates in the original problem, so neither is a representative benchmark
-of all infeasible LPs.
+Only the feasible positive-cost family is included in the new synthetic study.
+The earlier all-negative and mixed-sign infeasible families are historical,
+not part of its 116 projections. The former 300-projection course baseline is
+[recoverable in Git history](https://github.com/Jamil997/random-projections-lp-course-project/tree/25c932497f4fcecaeebd7ca58be035ce2a03ef68/results/baseline).
+The unchanged rerun.py remains an imported helper for current synthetic and
+Netlib code; it is not the current synthetic entry point.
 
-No earlier timing table is reused. The supplied new baseline records come from
-executing the current scripts, and any future rerun should be saved separately.
+## Frozen measurements and portable export
 
-## October 2026 extension
+The run was executed by an isolated temporary runner before publication.
+Raw observations, measured times, protocol, vectors, and the numerical summary
+are copied unchanged. Absolute helper-path keys in the environment are
+normalized, with a publication note and seed phase added. The original recorded
+runner hash is retained.
 
-The September synthetic baseline and `experiments/rerun.py` remain unchanged.
-`experiments/netlib_benchmark.py` adds five fixed, application-related Netlib
-benchmarks, exact standard-form conversion, real CSR storage, CountSketch,
-two row ratios, ten seeds per configuration, five invertible controls, and
-saved vectors/recession-ray certificates. It reuses the existing quality and
-recovery helpers; it does not implement a new recovery algorithm.
+synthetic_benchmark.py is a portable CLI export. Before export, ASTs of the
+eight numerical functions (seed, generator, solver, storage, quality, recovery,
+record writer, case runner) were checked equal to the measured implementation.
+[source_provenance.json](results/synthetic/source_provenance.json) records
+both source identities and kernel hashes. These historical timings are not
+represented as a newly executed run of the portable CLI.
 
-The data downloader pins the upstream revision and checks hashes. Raw MPS data
-are fetched on demand, not republished. The independent scalar-metric verifier
-and report-table generator check the released records; times are wall-clock
-and array-buffer storage is not peak process memory.
+The separate runtime pilot had three originals, two projections, and one
+120-second original timeout. It is excluded from main estimates. The main
+300-second limit was chosen before observing main-stage outcomes; all main
+solves completed optimally. pilot_raw.jsonl preserves the calibration evidence.
+Private filesystem inventories and local report hashes are not published.
 
-[THESIS_COMPARISON.md](THESIS_COMPARISON.md) separates computational limitations
-already reported in the thesis from these new tests. The report adds relevant
-sketching background with citations, without claiming a new theoretical result.
+## Netlib and document boundaries
+
+Netlib remains unchanged: five fixed benchmarks, 300 projections, 216 numerical
+unbounded-ray certificates, 84 finite optima without successful retrieval, and
+five successful full-dimensional controls. Its code, data provenance, results,
+vectors, and diagnostics are preserved byte-for-byte. Raw MPS inputs are fetched
+from a pinned mirror and not redistributed.
+
+The report and presentation are neither updated nor uploaded in this change.
+README/provenance documentation describes the new findings without implying
+that the separate documents already contain them.

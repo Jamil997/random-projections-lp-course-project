@@ -5,7 +5,7 @@ type: software
 authors:
   - family-names: Zhumabek
     given-names: Jamil
-version: 1.1.0
-date-released: 2026-10-04
+version: 1.2.0
+date-released: 2026-10-05
 repository-code: "https://github.com/Jamil997/random-projections-lp-course-project"
-abstract: "Reproducible synthetic and Netlib experiments for projected linear programs, with original feasibility checks, sparse storage measurements, unbounded-ray certificates, and provenance from the author's master's thesis."
+abstract: "Reproducible scaling, compression, and sparsity experiments for projected LPs, with bound-quality and original-feasibility checks; unchanged Netlib benchmarks demonstrate limitations. Empirical extension of the author's master's thesis."
