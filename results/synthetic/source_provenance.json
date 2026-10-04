@@ -1,0 +1,19 @@
+{
+  "measured_runner_sha256": "29437835f655a0e5acdf082c545509e24407164ef64e3dd7dbabc624a563c215",
+  "portable_runner_sha256": "388f4e9a03e32553a6561401d7c7ff2b79497d237f927c4ea03f3c61be2f00f5",
+  "original_private_environment_sha256": "6403561f7fd3452725885fc7bf92b5d5567e4c873f623fc9feee23bf214cb7a4",
+  "numerical_kernel_ast_sha256": {
+    "seed": "4c31eb25730b2d499fe835ea72bec461b0866c4e4cf28fce3d30555fad3f9fbc",
+    "generate": "4ea316bcaced715a88b1011699cdd6ec78b5515aa180324629e2be88788d408b",
+    "solve": "9ed7eb8acd1954b64ebd8699b791f17a1c2b5e980b9c051332e42962c998159f",
+    "bytes_of": "ddd541527e7e38aa073b3f7f1de830ad468c545947c89374bd374dfa24bc7682",
+    "quality": "4df466625eaff60cf14b5f56cd4ef21f316947723ed4e6a9c06f2c7c6bd4732a",
+    "recover": "534424edc64fda54a46c9a6bfc35bb39fac84396b3064b2f6001bedecdc03011",
+    "save_record": "641be172ccb382f697a245d95806f41795deb14bce14ceecdf5c32dee8052178",
+    "run_case": "1c094dd2cb46dfb9c156a60ac33fcb896d5916c3d270d53e0377a1fa94ae79d3"
+  },
+  "numerical_kernels_ast_equal_before_export": true,
+  "changes": "Repository-relative paths and CLI entry point; no numerical algorithm, seed schedule, timing kernel, or measured result changed.",
+  "not_published": "Private filesystem inventory, local document hashes, and absolute installation paths.",
+  "pilot": "Three original runtime pilots, two projected solves, one 120-second original timeout. Excluded from the 116 main projections; main timeout fixed to 300 seconds before main execution."
+}

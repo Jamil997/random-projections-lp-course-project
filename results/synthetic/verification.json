@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "counts": {
+    "candidate_metric_checks": 409,
+    "original_optima_verified": 61,
+    "projected_optima_verified": 116,
+    "independent_instances_verified": 51
+  },
+  "maxima": {
+    "projected_equality_relative_inf": 2.4537499673211023e-11,
+    "dual_infeasibility": 1.2865310150544929e-08,
+    "relative_projected_duality_gap": 5.447026823938643e-12
+  },
+  "expected_original_runs": 61,
+  "expected_projected_or_skipped_runs": 116,
+  "original_status_counts": {
+    "optimal": 61
+  },
+  "projected_status_counts": {
+    "optimal": 116
+  },
+  "summary_recomputed_and_checked": true,
+  "source_and_artifact_checksums_checked": true,
+  "verifier_sha256": "19ee5275734ffba8ca343261db1445206a8bc645571e6bb7c7d94e42ee18d20f"
+}
