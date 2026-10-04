@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Please cite the master's thesis and the previous repository when reusing this course project."
+title: "Random Projections for Linear Programming: Algorithms for Big Data Course Project"
+type: software
+authors:
+  - family-names: Zhumabek
+    given-names: Jamil
+version: 1.1.0
+date-released: 2026-10-04
+repository-code: "https://github.com/Jamil997/random-projections-lp-course-project"
+abstract: "Reproducible synthetic and Netlib experiments for projected linear programs, with original feasibility checks, sparse storage measurements, unbounded-ray certificates, and provenance from the author's master's thesis."
