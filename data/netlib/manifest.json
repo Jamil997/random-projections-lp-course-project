@@ -1,0 +1,53 @@
+{
+  "upstream_repository": "https://github.com/coin-or-tools/Data-Netlib",
+  "revision": "f1cc423067407d55d579c9c35fb01edf860dbc24",
+  "reference": "https://www.netlib.org/lp/data/readme",
+  "downloaded_utc": "2026-10-04T13:15:30.567416+00:00",
+  "datasets": [
+    {
+      "name": "adlittle",
+      "url": "https://raw.githubusercontent.com/coin-or-tools/Data-Netlib/f1cc423067407d55d579c9c35fb01edf860dbc24/adlittle.mps.gz",
+      "sha256_gzip": "9c9e7581b9157b13ba6985783f4ece702b478b53b813205d14c807aa6e5233c3",
+      "sha256_mps": "db211f7bf735518a246a2a0e385ec51abc09cd601da7ae50d6c3fe083cb6f94b",
+      "bytes_mps": 16835,
+      "reference_objective": 225494.96316,
+      "description": "Established Netlib LP supplied by Stanford SOL."
+    },
+    {
+      "name": "afiro",
+      "url": "https://raw.githubusercontent.com/coin-or-tools/Data-Netlib/f1cc423067407d55d579c9c35fb01edf860dbc24/afiro.mps.gz",
+      "sha256_gzip": "7bf2faf46c75b9feae51b65354d1b86914b4733a2e71e26c1efe9c817df1554e",
+      "sha256_mps": "04992b87e57e57c1c417c96b846833bfa12e055eeaa623f043c45fc773b5be41",
+      "bytes_mps": 3327,
+      "reference_objective": -464.75314286,
+      "description": "Small established Netlib LP supplied by Stanford SOL."
+    },
+    {
+      "name": "blend",
+      "url": "https://raw.githubusercontent.com/coin-or-tools/Data-Netlib/f1cc423067407d55d579c9c35fb01edf860dbc24/blend.mps.gz",
+      "sha256_gzip": "57e8b96633bcb03d7b98ca65880855ecabd3a515dfac6110aaaddd3a1876d244",
+      "sha256_mps": "38e1d84a38f1e0adaa16d3dd0abe758f6cea13a21f33681aa92742b693260aef",
+      "bytes_mps": 17538,
+      "reference_objective": -30.812149846,
+      "description": "Oil-refinery model variant documented by Netlib."
+    },
+    {
+      "name": "scfxm1",
+      "url": "https://raw.githubusercontent.com/coin-or-tools/Data-Netlib/f1cc423067407d55d579c9c35fb01edf860dbc24/scfxm1.mps.gz",
+      "sha256_gzip": "ec93a2977ff0233216b1fd85fc0b1fe38497b7862f61377a0a9532d8f7af5695",
+      "sha256_mps": "3e602523ca64bb4fd7387da7eca577d964e08d7c04326c59937a0d58add7de25",
+      "bytes_mps": 91527,
+      "reference_objective": 18416.759028,
+      "description": "Staircase LP from the Ho-Loute benchmark collection."
+    },
+    {
+      "name": "stocfor1",
+      "url": "https://raw.githubusercontent.com/coin-or-tools/Data-Netlib/f1cc423067407d55d579c9c35fb01edf860dbc24/stocfor1.mps.gz",
+      "sha256_gzip": "9a2c578541c2bc4030455f6954b75a8ae9b0a2debb4720290afd30f65ea986e2",
+      "sha256_mps": "98e1cb3940233e044e3d0e50869539087acdf8f0862916f777e553afc705ba90",
+      "bytes_mps": 17050,
+      "reference_objective": -41131.976219,
+      "description": "Deterministic member of Netlib's seven-period forestry family."
+    }
+  ]
+}
